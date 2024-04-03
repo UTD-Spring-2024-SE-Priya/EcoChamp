@@ -1,0 +1,20 @@
+{% extends "ecochamp/layout.html" %}
+{% block title %}
+EcoChamp: FAQs
+{% endblock %}
+
+{% block content %}
+<body>
+    <h1>Search</h1>
+    <form action="{% url 'faq' %}" method="GET">
+        <input type="text" name="query" placeholder="Enter search query">
+        <button type="submit">Search</button>
+    </form>
+    {% if result %}
+        <h2>Result for "{{ query }}":</h2>
+        <p>{{ result }}</p>
+    {% elif error %}
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+{% endblock %}

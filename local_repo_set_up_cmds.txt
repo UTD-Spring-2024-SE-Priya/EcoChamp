@@ -1,0 +1,19 @@
+// Navigate to directory where you want to put EcoChamp local repository
+
+
+git clone https://github.com/UTD-Spring-2024-SE-Priya/EcoChamp.git
+
+py -3 -m venv .venv
+.venv\scripts\activate
+
+// Select .venv Python Interpreter in Command Palette (Ctrl+Shift+P)
+
+python -m pip install --upgrade pip
+python -m pip install django
+
+python manage.py migrate
+
+// Execute to run website
+python manage.py runserver
+
+For further instructions on using Django, go to Django Tutorial in Visual Studio Code (link: https://code.visualstudio.com/docs/python/tutorial-django)

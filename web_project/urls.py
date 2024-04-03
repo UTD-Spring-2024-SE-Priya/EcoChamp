@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import include, path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+# Associates the whole app with a URL path (empty means default path)
 urlpatterns = [
     path("", include("ecochamp.urls")),
     path('admin/', admin.site.urls),

@@ -1,14 +1,21 @@
 {% extends "ecochamp/layout.html" %}
 {% block title %}
-EcoChamp: homepage
+EcoChamp
 {% endblock %}
 
 {% block content %}
-<header>
-    <h1>Welcome {{ name }}!</h1>
+<header class="message">
+    <h4 class="message1">THE STATISTIC OF THE DAY IS...</h4>
+    <h1 class="message2">{{ random_statistic }}</h1>
+    <h4 class="message1">TODAY'S CHALLENGE IS...</h4>
+    <h6 class="message1">{{ corresponding_challenge }}</h6>
 </header>
 
-<body>
-    <span class="message">Hello there!</span> It's {{ date | date:"l, d F, Y" }} at {{ date | time:"H:i:s" }}.
-</body>
+<header class="logoutbutton">
+    <a href="/login" class="message1">LOGOUT</a>
+</header>
+
+<div class="checkbox">
+    <input type="checkbox" id="dummy-checkbox">
+</div>
 {% endblock %}

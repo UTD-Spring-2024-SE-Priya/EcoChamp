@@ -1,5 +1,3 @@
-<!-- Used to enforce nav bar on each page that uses it (and maintain css consistency b/n those pages)-->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,18 +9,16 @@
 
 <body>
 <div class="navbar">
-    <a href="{% url 'home' %}" class="navbar-brand">Homepage</a>
-    <a href="{% url 'about' %}" class="navbar-item">About Us</a>
-    <a href="{% url 'faq' %}" class="navbar-item">FAQs</a>
+    <a href="{% url 'home' %}" class="navbar-brand{% if request.path == '/home/' %} active{% endif %}">Homepage</a>
+    <a href="{% url 'profile' %}" class="navbar-brand{% if request.path == '/profile/' %} active{% endif %}">User Profile</a>
+    <a href="{% url 'help' %}" class="navbar-brand{% if request.path == '/help/' %} active{% endif %}">How You Can Help Us</a>
+    <a href="{% url 'faq' %}" class="navbar-brand{% if request.path == '/faq/' %} active{% endif %}">FAQs</a>
 </div>
 
-<div class="body-content">
+<div class="frame">
+    <h4 class="logo">ECOCHAMP</h4>
     {% block content %}
     {% endblock %}
-    <hr/>
-    <footer>
-        <p>&copy; 2024</p>
-    </footer>
 </div>
 </body>
 </html>

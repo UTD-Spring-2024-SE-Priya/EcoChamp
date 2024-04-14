@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'ecochamp/site.css' %}"/>
+</head>
+
+<body>
+{% block content %}
+<header class="message">
+    <h4 class="startmsg1">Save the Earth <br>with EcoChamp</h4>
+    <h6 class="startmsg2">Be a part of the ongoing efforts to save our environment through EcoChamp, a fun, interactive <br>platform to make an impact!</h6>
+</header>
+
+<header class="startbutton">
+    <a href="/signup" class="message1">GET STARTED</a>
+</header>
+{% endblock %}
+</body>
+</html>

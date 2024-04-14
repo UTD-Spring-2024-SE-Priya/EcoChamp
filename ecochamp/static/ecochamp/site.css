@@ -1,32 +1,429 @@
-.message {
+html {
+    background-image: url('/static/images/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.frame {
+    position: absolute;
+    top: 106px;
+    left: 8px;
+    width: 1260px;
+    height: 620px;
+    padding: 20px; 
+    box-sizing: border-box;
+    background-color: #C1F9C6; 
+    border-radius: 10px;
+}
+
+.logo{
     font-weight: 600;
-    color: blue;
+    color: #174A31;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    position: relative; 
+    top: -63px; 
 }
 
 .navbar {
-    background-color: lightslategray;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 72px; 
+    background-color: #C1F9C6;
     font-size: 1em;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
-    padding: 8px 5px 8px 5px;
+    color: #32885E;
+    border-top: 1px solid #32885E;
+    border-left: 1px solid #32885E;
+    border-right: 1px solid #32885E;
+    padding: 0; 
+    margin: 0; 
 }
 
 .navbar a {
     text-decoration: none;
     color: inherit;
+    padding: 20px 16px;
+    display: inline-block;
 }
 
 .navbar-brand {
+    margin-left: 0;
+}
+
+.navbar-item.active {
+    font-weight: bold;
     font-size: 1.2em;
+    color: #174A31;
+}
+
+.signupdisplay{
+    position: relative;
     font-weight: 600;
+    color: #174A31;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
 }
 
-.navbar-item {
-    font-variant: small-caps;
-    margin-left: 30px;
+.signupdisplay input {
+    width: 500px; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.body-content {
-    padding: 5px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.signupbutton{
+    position: absolute;
+    top: 500px;
+    left: 380px;
+    width: 520px; 
+    height: 32px;
+    padding: 10px; 
+    box-sizing: border-box;
+    background-color: #38E791; 
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signupmessage {
+    position: absolute;
+    top: 570px;
+    left: 550px;
+    width: 500px; 
+    height: 32px;
+    font-weight: 600;
+    color: #174A31;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.logindisplay{
+    position: relative;
+    font-weight: 600;
+    color: #174A31;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.logindisplay input {
+    position: relative;
+    top: 150px;
+    width: 500px; 
+    width: 500px; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.loginbutton{
+    position: absolute;
+    top: 450px;
+    left: 380px;
+    width: 520px; 
+    height: 32px;
+    padding: 10px; 
+    box-sizing: border-box;
+    background-color: #38E791; 
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginmessage {
+    position: relative;
+    top: 80px;
+    font-weight: 600;
+    color: #174A31;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 64px;
+}
+
+.loginmessage1 {
+    position: absolute;
+    top: 510px;
+    left: 550px;
+    width: 500px; 
+    height: 32px;
+    font-weight: 600;
+    color: #174A31;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.loginmessage2 {
+    position: absolute;
+    top: 540px;
+    left: 520px;
+    width: 500px; 
+    height: 32px;
+    font-weight: 600;
+    color: #174A31;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.message{
+    position: relative; 
+    bottom: -15px; 
+}
+
+.message1 {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    font-weight: 600;
+    color: #174A31;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.message2 {
+    font-weight: 600;
+    color: #174A31;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 64px;
+}
+
+.checkbox {
+    text-align: center;
+    position: relative;
+    margin-top: 40px; 
+}
+
+input[type="checkbox"] {
+    width: 20px; 
+    height: 20px; 
+}
+
+.faqframe{
+    position: absolute;
+    top: 50px;
+    left: 220px; 
+    width: 840px; 
+    height: 520px;
+    padding: 20px; 
+    box-sizing: border-box;
+    background-color: white; 
+    border-radius: 10px;
+}
+
+.faqmain {
+    color: #174A31;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+}
+
+.faqdrop {
+    font-weight: 600;
+    color: #174A31;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.faq-details {
+    margin-bottom: 10px; 
+}
+
+.faq-summary {
+    cursor: pointer; 
+    font-weight: bold; 
+    border-bottom: 1px solid #ccc; 
+}
+
+.faq-content {
+    margin-left: 20px; 
+    padding: 5px; 
+    border-left: 2px solid #ccc;
+}
+
+.article{
+    position: absolute;
+    top: 100px;
+    left: 20px; 
+    width: 380px; 
+    height: 408px;
+    padding: 20px; 
+    box-sizing: border-box;
+    background-color: white; 
+    border-radius: 10px;
+}
+
+.article img {
+    position: absolute; 
+    top: 10px;
+    left: 10px; 
+    width: 360px; 
+    height: 250px;
+    border-radius: 10px;
+}
+
+.donation{
+    position: absolute;
+    top: 100px; /* Y position */
+    left: 415px; /* X position */
+    width: 410px; /* Width */
+    height: 408px;
+    padding: 20px; 
+    box-sizing: border-box;
+    background-color: white; 
+    border-radius: 10px;
+}
+
+.donation img {
+    position: absolute; 
+    top: 10px;
+    left: 20px; 
+    width: 360px; 
+    height: 250px;
+    border-radius: 10px;
+}
+
+.feedback{
+    position: absolute;
+    top: 100px; /* Y position */
+    left: 840px; /* X position */
+    width: 400px; /* Width */
+    height: 408px;
+    padding: 20px; 
+    box-sizing: border-box;
+    background-color: white; 
+    border-radius: 10px;
+}
+
+.feedback img {
+    position: absolute; 
+    top: 10px;
+    left: 20px; 
+    width: 360px; 
+    height: 250px;
+    border-radius: 10px;
+} 
+
+.helpheader{
+    font-weight: 600;
+    color: #174A31;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    position: relative; 
+    top: -50px; 
+}
+
+.helpheader img {
+    position: absolute; 
+    top: 70px;
+    left: 560px; 
+    width: 100px; 
+    height: 130px;
+    border-radius: 10px;
+} 
+
+.helpmessage {
+    position: relative; 
+    bottom: -250px; 
+    color: #174A31;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+.profilestats {
+    position: relative; 
+    bottom: -130px;
+    font-weight: 600;
+    color: #174A31;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    padding: 10px; 
+}
+
+.profilesubpage{
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    position: relative; 
+    bottom: -200px; 
+    color: #174A31;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+.extinct{
+    font-weight: 600;
+    color: #174A31;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    position: relative; 
+    bottom: -80px; 
+}
+
+.choices{
+    font-weight: 600;
+    color: #174A31;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.image-container img:hover {
+    border: 2px solid #174A31;
+}
+
+.logoutbutton{
+    position: absolute;
+    top: 640px;
+    left: 550px;
+    width: 137px; 
+    height: 52px;
+    padding: 20px; 
+    box-sizing: border-box;
+    background-color: #38E791; 
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.startbutton{
+    position: absolute;
+    top: 500px;
+    left: 550px;
+    width: 166px; 
+    height: 52px;
+    padding: 20px; 
+    box-sizing: border-box;
+    background-color: #38E791; 
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.startmsg1 {
+    font-weight: 600;
+    color: #174A31;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 72px;
+    position: relative;
+    top: 60px;
+}
+
+.startmsg2 {
+    font-weight: 600;
+    color: #174A31;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    position: relative;
 }

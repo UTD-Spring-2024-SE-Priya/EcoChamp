@@ -1,0 +1,51 @@
+{% extends "ecochamp/layout.html" %}
+{% block title %}
+EcoChamp
+{% endblock %}
+
+{% block content %}
+<h1 class="helpheader">Edit Avatar</h1>
+
+<div class="image-container">
+    <div class="image-wrapper">
+        <img src="/static/images/vaquita.jpeg">
+        <p class="choices">Vaquita</p>
+    </div>
+    <div class="image-wrapper">
+        <img src="/static/images/turtle.png">
+        <p class="choices">Turtle</p>
+    </div>
+    <div class="image-wrapper">
+        <img src="/static/images/saola.jpeg">
+        <p class="choices">Saola</p>
+    </div>
+    <div class="image-wrapper">
+        <img src="/static/images/rhino.jpeg">
+        <p class="choices">Rhino</p>
+    </div>
+    <div class="image-wrapper">
+        <img src="/static/images/leopard.jpeg">
+        <p class="choices">Leopard</p>
+    </div>
+</div>
+
+<style>
+    .image-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .image-wrapper {
+        text-align: center;
+        width: 20%;
+    }
+    .image-wrapper img {
+        width: 100%;
+        height: 260px;
+        border-radius: 10px;
+    }
+</style>
+
+<h6 class="extinct">THESE ANIMALS ARE ABOUT TO GO EXTINCT! CHECK OUT OUR DONATIONS PAGE TO HELP!</h6>
+
+{% endblock %}

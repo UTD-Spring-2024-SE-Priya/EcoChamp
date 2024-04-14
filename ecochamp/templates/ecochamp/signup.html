@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'ecochamp/site.css' %}"/>
+</head>
+
+<body>
+
+{% block content %}
+<h1 class="message2">Ready to Get <br>Started?</h1>
+<header class="signupdisplay">
+<form method="post">
+    {% csrf_token %}
+    <input type="email" name="email" id="id_email" placeholder="Email address" required><br><br>
+    <input type="text" name="username" id="id_username" placeholder="Username (Optional)"><br><br>
+    <input type="password" name="password" id="id_password" placeholder="Password" required><br><br>
+    <input type="password" name="confirm_password" id="id_confirm_password" placeholder="Confirm password" required><br><br>
+</form>
+</header>
+
+<header class="signupbutton">
+    <a href="/home" class="message1">Sign Up</a>
+</header>
+<h6>
+    <a href="/login" class="signupmessage">Already have an account?</a>
+</h6>
+{% endblock %}
+</body>
+</html>

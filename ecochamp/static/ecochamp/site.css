@@ -78,7 +78,7 @@ html {
 
 .signupbutton{
     position: absolute;
-    top: 500px;
+    top: 270px;
     left: 380px;
     width: 520px; 
     height: 32px;
@@ -93,8 +93,8 @@ html {
 
 .signupmessage {
     position: absolute;
-    top: 570px;
-    left: 550px;
+    top: 520px;
+    left: 500px;
     width: 500px; 
     height: 32px;
     font-weight: 600;
@@ -149,7 +149,7 @@ html {
 
 .loginmessage1 {
     position: absolute;
-    top: 510px;
+    top: 520px;
     left: 550px;
     width: 500px; 
     height: 32px;
@@ -427,3 +427,23 @@ input[type="checkbox"] {
     font-size: 18px;
     position: relative;
 }
+
+.form-group {
+    margin-bottom: 20px; 
+    padding: 5px; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    color: #174A31; 
+}
+
+/* Custom styles for labels */
+.form-group label {
+    font-weight: bold; /* Make labels bold */
+}
+
+/* Custom styles for error messages */
+.form-group .error {
+    color: 174A31; /* Set error message color */
+    font-size: 14px; /* Set error message font size */
+}
+

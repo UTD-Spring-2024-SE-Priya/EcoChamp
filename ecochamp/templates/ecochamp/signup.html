@@ -12,18 +12,41 @@
 {% block content %}
 <h1 class="message2">Ready to Get <br>Started?</h1>
 <header class="signupdisplay">
-<form method="post">
-    {% csrf_token %}
-    <input type="email" name="email" id="id_email" placeholder="Email address" required><br><br>
-    <input type="text" name="username" id="id_username" placeholder="Username (Optional)"><br><br>
-    <input type="password" name="password" id="id_password" placeholder="Password" required><br><br>
-    <input type="password" name="confirm_password" id="id_confirm_password" placeholder="Confirm password" required><br><br>
-</form>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="{{ form.username.id_for_label }}">Username</label>
+            {{ form.username }}
+            {% for error in form.username.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Email</label>
+            {{ form.email }}
+            {% for error in form.email.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.password1.id_for_label }}">Password</label>
+            {{ form.password1 }}
+            {% for error in form.password1.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.password2.id_for_label }}">Confirm Password</label>
+            {{ form.password2 }}
+            {% for error in form.password2.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <input type="submit" class="btn btn-primary" value="Sign Up">
+    </form>    
+    
 </header>
 
-<header class="signupbutton">
-    <a href="/home" class="message1">Sign Up</a>
-</header>
 <h6>
     <a href="/login" class="signupmessage">Already have an account?</a>
 </h6>

@@ -5,12 +5,21 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import random
 from .forms import SignUpForm
-from .forms import LoginForm
 from django.contrib import messages
+from .forms import SignUpForm
+from django.contrib.auth.models import User
+from .forms import CustomAuthenticationForm
 
 # Start here
 def start(request):
     return render(request, "ecochamp/start.html")
+
+def create_user_view(request):
+    # Create the user
+    user = User.objects.create_user(username='oldUserPerson', email='olduser3354@gmail.com', password='oldchamp')
+    # Save the user
+    user.save()
+    return render(request, 'success.html')
 
 # Handles backend of user homepage
 def home(request):
@@ -29,30 +38,34 @@ def home(request):
 
     return render(request, 'ecochamp/home.html', {'random_statistic': random_statistic, 'corresponding_challenge': corresponding_challenge})
 
-# Handles backend of the Sign Up page      
+# Handles backend of the Sign Up page
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
+            # Optionally, you can automatically log in the user after signup
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            if user is not None:
+                login(request, user)
+                return redirect('home')  # Redirect to the home page after successful signup
+            else:
+                messages.error(request, 'Failed to log in after signup.')
     else:
         form = SignUpForm()
     return render(request, 'ecochamp/signup.html', {'form': form})
 
-# Handles backend of the Log In page    
-def login(request):
+# Handles backend of the Log In page
+def user_login(request):
     if request.method == 'POST':
-        form = LoginForm(request.POST)
+        form = CustomAuthenticationForm(request, data=request.POST)
         if form.is_valid():
-            username_or_email = form.cleaned_data['username_or_email']
-            password = form.cleaned_data['password']
-            user = authenticate(request, username=username_or_email, password=password)
-            if user is not None:
-                login(request, user)
-            else:
-                messages.error(request, 'Invalid username/email or password.')
+            login(request, form.get_user())
+            return redirect('home')
     else:
-        form = LoginForm()
+        form = CustomAuthenticationForm(request)
     return render(request, 'ecochamp/login.html', {'form': form})
     
 # Handles backend of the User Profile page

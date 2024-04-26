@@ -95,9 +95,26 @@ def faq(request):
     try:
         with open(file_path, 'r') as file:
             faq_entries = [line.strip().split('|') for line in file.readlines()]
-            context = {
-                'entries': faq_entries,
-            }
-            return render(request, 'ecochamp/faq.html', context)
     except FileNotFoundError:
-        return render(request, 'ecochamp/faq.html', {'error': 'File not found.'})
+        faq_entries = []
+
+    query = request.GET.get('query', '')
+    result = None
+    error = None
+
+    if query:
+        for entry in faq_entries:
+            if query.lower() in entry[0].lower():
+                result = entry
+                break
+        else:
+            error = 'No results found.'
+
+    context = {
+        'entries': faq_entries,
+        'query': query,
+        'result': result,
+        'error': error,
+    }
+
+    return render(request, 'ecochamp/faq.html', context)

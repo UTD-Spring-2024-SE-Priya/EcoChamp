@@ -93,14 +93,36 @@ html {
 
 .signupmessage {
     position: absolute;
-    top: 520px;
-    left: 500px;
+    top: 580px;
+    left: 540px;
     width: 500px; 
     height: 32px;
     font-weight: 600;
     color: #174A31;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block; 
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 300px; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+}
+
+.btn {
+    margin-top: 50px; 
 }
 
 .logindisplay{

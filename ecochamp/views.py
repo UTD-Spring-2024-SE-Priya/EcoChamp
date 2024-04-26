@@ -70,14 +70,8 @@ def user_login(request):
     
 # Handles backend of the User Profile page
 def profile(request):
-
-    return render(
-        request,
-        'ecochamp/profile.html',
-        {
-            'name': "Kevin",
-        }
-    )
+    username = request.user.username  
+    return render(request, 'ecochamp/profile.html', {'username': username})
 
 # Handles backend of the Edit Avatar page
 def avatar(request):

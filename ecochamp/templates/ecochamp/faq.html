@@ -1,31 +1,20 @@
 {% extends "ecochamp/layout.html" %}
-
-{% block title %}
-EcoChamp
-{% endblock %}
-
+{% block title %}EcoChamp{% endblock %}
 {% block content %}
 <header class="faqframe">
     <h1 class="faqmain">SEARCH</h1>
     <form action="{% url 'faq' %}" method="GET">
-        <input type="text" name="query" placeholder="Enter search query">
+        <input type="text" name="query" placeholder="Enter search query" value="{{ query }}">
         <button type="submit">Search</button>
     </form>
-    {% if result %}
-        <h2>Result for "{{ query }}":</h2>
-        <p>{{ result }}</p>
-    {% elif error %}
-        <p>{{ error }}</p>
-    {% endif %}
-
     <h1 class="faqdrop">FAQs</h1>
-    {% if entries %}
-        {% for entry in entries %}
-            <details class="faq-details"> 
-                <summary class="faq-summary">{{ entry.0 }}</summary> 
-                <p class="faq-content">{{ entry.1 }}</p> 
-            </details>
-        {% endfor %}
+    {% if result %}
+    <details class="faq-details">
+        <summary class="faq-summary">{{ result.0 }}</summary>
+        <p class="faq-content">{{ result.1 }}</p>
+    </details>
+    {% elif error %}
+    <p>{{ error }}</p>
     {% endif %}
 </header>
 {% endblock %}

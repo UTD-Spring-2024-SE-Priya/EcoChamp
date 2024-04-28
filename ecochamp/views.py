@@ -15,15 +15,12 @@ def start(request):
     return render(request, "ecochamp/start.html")
 
 def create_user_view(request):
-    # Create the user
     user = User.objects.create_user(username='oldUserPerson', email='olduser3354@gmail.com', password='oldchamp')
-    # Save the user
     user.save()
     return render(request, 'success.html')
 
 # Handles backend of user homepage
 def home(request):
-
     statistics_and_challenges = {
         "Every day, Americans throw away 25 trillion Styrofoam cups!": "Replace your drink's Styrofoam cup with a paper cup or mug! (25 Points)",
         "Over 1 million marine animals are killed by plastic each year!": "Carry a reusable water bottle instead of buying bottled water! (50 Points)",
@@ -70,8 +67,23 @@ def user_login(request):
     
 # Handles backend of the User Profile page
 def profile(request):
-    username = request.user.username  
-    return render(request, 'ecochamp/profile.html', {'username': username})
+    user = request.user
+    if user.is_authenticated:
+        if user.username == 'oldUserPerson':
+            streak = 20
+            points = 225
+            tier = 1  
+        else:
+            streak = 0
+            points = 0  
+            tier = 0
+    else:
+        streak = 0
+        points = 0  
+        tier = 0 
+
+    username = user.username  
+    return render(request, 'ecochamp/profile.html', {'username': username, 'streak': streak, 'points': points, 'tier': tier})
 
 # Handles backend of the Edit Avatar page
 def avatar(request):

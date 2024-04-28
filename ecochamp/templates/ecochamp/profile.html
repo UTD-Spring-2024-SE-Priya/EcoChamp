@@ -8,9 +8,13 @@ EcoChamp
     <h1 class="helpheader">Welcome {{ username }}!
         <img src="/static/images/leopard.jpeg">
     </h1>
-    <h6 class="profilestats">YOU HAVE A STREAK OF 20 DAYS!</h6>
-    <h6 class="profilestats">YOU HAVE 225 POINTS!</h6>
-    <h6 class="profilestats">WELCOME TO THE BADGER TIER! YOU ARE 15 POINTS AWAY FROM REACHING LEVEL 3</h6>
+    <h6 class="profilestats">YOU HAVE A STREAK OF {{ streak }} DAYS!</h6>
+    <h6 class="profilestats" id="points-display">YOU HAVE {{ points }} POINTS!</h6>
+    {% if tier == 1 %}
+    <h6 class="profilestats">WELCOME TO THE BADGER TIER! YOU ARE 75 POINTS AWAY FROM REACHING TIER 2</h6>
+    {% else %}
+    <h6 class="profilestats">WELCOME TO THE HONEYBEE TIER! YOU ARE 300 POINTS AWAY FROM REACHING TIER 1!</h6>
+    {% endif %}
     <a href="/avatar" class="profilesubpage">User Settings</a>
 </header>
 
